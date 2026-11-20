@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Real-Time Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="chat">
+    <h1>My Live Chat</h1>
+    <p id="status">Connecting...</p>
+    <p>Online users: <strong id="count">0</strong></p>
+    <p>
+      Messages received:
+      <strong id="messageCount">0</strong>
+    </p>
+
+    <section id="login">
+      <label for="username">Your name</label>
+      <input id="username" maxlength="20" placeholder="e.g. Alice">
+      <button id="join">Join Chat</button>
+    </section>
+
+    <section id="chatArea" hidden>
+      <ul id="messages" aria-live="polite"></ul>
+      <p id="typingStatus"></p>
+      <form id="messageForm">
+        <input id="message" maxlength="100"
+               autocomplete="off"
+               placeholder="Type a message" required>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
